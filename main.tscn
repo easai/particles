@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2e414gx68hj1"]
+
+[ext_resource type="Script" uid="uid://b40k10t85ugda" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://clsrv8vdjhkuu" path="res://assets/1280px-Pillow_basalt_crop_l.jpg" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://c3av15a6kaqsh" path="res://assets/running-stream-water-sound-239612.mp3" id="3_1bvp3"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(551, 331)
+texture = ExtResource("2_0xm2m")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1bvp3")
+volume_db = -10.05
+autoplay = true
