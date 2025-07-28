@@ -2,7 +2,6 @@ extends Node2D
 
 class_name Main
 
-const MARGIN: float = 10.0
 const MOLECULE = preload("res://molecule.tscn")
 
 static var _vp_r: Rect2
@@ -25,9 +24,4 @@ func _ready() -> void:
 
 func spawn_molecule() -> void:
 	var new_molecule: Molecule = MOLECULE.instantiate()
-	var x_pos: float = randf_range(_vp_r.position.x + MARGIN, _vp_r.end.x - MARGIN)
-	var y_pos: float = randf_range(_vp_r.position.y + MARGIN, _vp_r.end.y - MARGIN)
-	var angle: float = randf_range(0, 360)
-	new_molecule.position = Vector2(x_pos, y_pos)
-	new_molecule.rotation_degrees=angle
 	add_child(new_molecule)
