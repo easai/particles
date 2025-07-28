@@ -3,6 +3,7 @@ extends Node2D
 class_name Main
 
 const MOLECULE = preload("res://molecule.tscn")
+const OXYGEN = preload("res://oxygen.tscn")
 
 static var _vp_r: Rect2
 
@@ -25,3 +26,5 @@ func _ready() -> void:
 func spawn_molecule() -> void:
 	var new_molecule: Molecule = MOLECULE.instantiate()
 	add_child(new_molecule)
+	var new_oxygen: Oxygen = OXYGEN.instantiate()
+	add_child(new_oxygen)	
