@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://pwtreey37c0i"]
+
+[ext_resource type="Script" uid="uid://bn18ivnn6wpwq" path="res://carbon_dioxide.gd" id="1_gmip4"]
+[ext_resource type="Texture2D" uid="uid://dtuucuixchghr" path="res://assets/Carbon_dioxide_3D_ball.png" id="2_nvhi0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_voqln"]
+radius = 45.2738
+height = 351.516
+
+[node name="CarbonDioxide" type="Area2D"]
+script = ExtResource("1_gmip4")
+metadata/_custom_type_script = "uid://befvr2duqwhnt"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(219, 154)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_nvhi0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(218, 155)
+rotation = 1.03937
+shape = SubResource("CapsuleShape2D_voqln")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

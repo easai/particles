@@ -15,6 +15,10 @@ run/main_scene="uid://c2e414gx68hj1"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[editor]
+
+movie_writer/movie_file="C:/prog-godot/particles/build/output.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
