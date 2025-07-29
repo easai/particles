@@ -1,23 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt3s0b4jto4d3"]
+[gd_scene load_steps=3 format=3 uid="uid://bt3s0b4jto4d3"]
 
-[ext_resource type="Script" uid="uid://befvr2duqwhnt" path="res://assets/molecule.gd" id="1_qs00y"]
 [ext_resource type="Texture2D" uid="uid://bsc15ry83yp1b" path="res://assets/Water-3D-balls-A.png" id="2_j4ewh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j4ewh"]
-radius = 46.0109
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qs00y"]
+radius = 30.9637
+height = 102.018
 
-[node name="Molecule" type="Area2D"]
-script = ExtResource("1_qs00y")
+[node name="Molecule" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(93, 64)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_j4ewh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(92, 71)
-shape = SubResource("CircleShape2D_j4ewh")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+rotation = 1.5967
+shape = SubResource("CapsuleShape2D_qs00y")

@@ -23,6 +23,10 @@ movie_writer/movie_file="C:/prog-godot/particles/build/output.avi"
 
 enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
 
+[physics]
+
+2d/default_gravity=0.0
+
 [rendering]
 
 renderer/rendering_method="mobile"

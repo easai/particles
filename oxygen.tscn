@@ -3,24 +3,19 @@
 [ext_resource type="Script" uid="uid://di4xiay0inpl2" path="res://oxygen.gd" id="1_orth8"]
 [ext_resource type="Texture2D" uid="uid://b5c2jgn8o6w0f" path="res://assets/Oxygen_molecule.png" id="2_6tt0g"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37bmx"]
-radius = 104.031
-height = 277.674
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tt0g"]
+radius = 32.7784
+height = 91.3479
 
-[node name="Oxygen" type="Area2D"]
+[node name="Oxygen" type="RigidBody2D"]
 script = ExtResource("1_orth8")
 metadata/_custom_type_script = "uid://befvr2duqwhnt"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(229, 176)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_6tt0g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(229, 175)
-rotation = -1.25233
-shape = SubResource("CapsuleShape2D_37bmx")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+rotation = 1.93318
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CapsuleShape2D_6tt0g")

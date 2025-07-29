@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwbsc8mxrexy5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d85yw"]
+distance = -647.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lfb78"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vdbah"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6y5mh"]
+normal = Vector2(-1, 0)
+
+[node name="Barrier" type="StaticBody2D"]
+
+[node name="Floor" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_d85yw")
+
+[node name="Ceiling" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_lfb78")
+
+[node name="Left" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_vdbah")
+
+[node name="Right" type="CollisionShape2D" parent="."]
+position = Vector2(1152, 0)
+shape = SubResource("WorldBoundaryShape2D_6y5mh")

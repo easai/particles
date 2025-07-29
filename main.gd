@@ -5,6 +5,7 @@ class_name Main
 const MOLECULE = preload("res://molecule.tscn")
 const OXYGEN = preload("res://oxygen.tscn")
 const CARBON_DIOXIDE = preload("res://carbon_dioxide.tscn")
+const WATER = preload("res://water.tscn")
 
 static var _vp_r: Rect2
 
@@ -23,9 +24,9 @@ func _ready() -> void:
 
 
 func spawn_molecule() -> void:
-	for i in range(7):
-		var new_molecule: Molecule = MOLECULE.instantiate()
-		add_child(new_molecule)
+	for i in range(10):
+		var new_water: Water = WATER.instantiate()
+		add_child(new_water)
 	for i in range(10):
 		var new_oxygen: Oxygen = OXYGEN.instantiate()
 		add_child(new_oxygen)	
