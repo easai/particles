@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://pwtreey37c0i"]
+[gd_scene load_steps=7 format=3 uid="uid://pwtreey37c0i"]
 
 [ext_resource type="Script" uid="uid://bn18ivnn6wpwq" path="res://carbon_dioxide.gd" id="1_gmip4"]
 [ext_resource type="Texture2D" uid="uid://dtuucuixchghr" path="res://assets/Carbon_dioxide_3D_ball.png" id="2_nvhi0"]
@@ -6,6 +6,44 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nvhi0"]
 radius = 9.42058
 height = 72.6464
+
+[sub_resource type="Animation" id="Animation_gmip4"]
+resource_name = "collide"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.1, 0.1), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_nvhi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_voqln"]
+_data = {
+&"RESET": SubResource("Animation_nvhi0"),
+&"collide": SubResource("Animation_gmip4")
+}
 
 [node name="CarbonDioxide" type="RigidBody2D"]
 script = ExtResource("1_gmip4")
@@ -18,3 +56,8 @@ texture = ExtResource("2_nvhi0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.06551
 shape = SubResource("CapsuleShape2D_nvhi0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_voqln")
+}
