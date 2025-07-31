@@ -4,6 +4,7 @@ class_name Molecule
 
 const MARGIN: int = 1
 var velocity = Vector2(randf_range(300.0, 400.0), 0.0)
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func born() -> void:
@@ -15,7 +16,7 @@ func born() -> void:
 	rotation_degrees = angle
 
 
-func _ready() -> void:
+func _ready():
 	born()
 
 
@@ -26,6 +27,8 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		var bounced = velocity.bounce(collision.get_normal())
 		var angle_variation = randf_range(-0.2, 0.2)  # radians
+		if animation_player != null:
+			animation_player.play("collide")
 		velocity = bounced.rotated(angle_variation) * randf_range(0.9, 1.1)
 
 
